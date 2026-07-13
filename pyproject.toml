@@ -1,0 +1,6 @@
+[project]
+name = "player_props"
+version = "0.1.0"
+
+[tool.setuptools.packages.find]
+include = ["utils*", "mlb*", "nba*", "nfl*"]
