@@ -15,16 +15,16 @@ Each proposition market segment is analyzed through:
 ## Key Findings
 
 - **[MLB Prop Markets](https://github.com/henrycosentino/player_props/blob/main/mlb/analysis.ipynb)** 
+    - Analysis in progress, check back later.
+- **[NBA Prop Markets](https://github.com/henrycosentino/player_props/blob/main/nba/analysis.ipynb)**
+    - Analysis in progress, check back later.
+- **[NFL Prop Markets](https://github.com/henrycosentino/player_props/blob/main/nfl/analysis.ipynb)** 
     - Total Maker PnL (after fees): $5,717,382.71.
     - Total Taker PnL (after fees): -$9,369,225.91.
     - Pre-game market implied probability of outcomes is structurally higher than observed hit rates.
     - Makers earn less on the 'Yes' outcome side, larger trades (by trade count) are associated with lower maker profit, and makers tend to earn more in larger markets. Market maturity has no observable effect on maker PnL.
     - Takers earn less on the 'Yes' outcome side, larger trades (by trade count) are associated with higher taker profit, and takers tend to earn less in larger markets. Market maturity has no observable effect on taker PnL.
-    - Please refer to the [notebook](https://github.com/henrycosentino/player_props/blob/main/mlb/analysis.ipynb) for in-depth analysis, covering: Anytime Touchdown, Two Plus Touchdown, Rushing Yard, Receiving Yard, Passing Yard, Passing Touchdown, and Receptions markets. 
-- **[NBA Prop Markets](https://github.com/henrycosentino/player_props/blob/main/nba/analysis.ipynb)**
-    - Analysis in progress, check back later.
-- **[NFL Prop Markets](https://github.com/henrycosentino/player_props/blob/main/nfl/analysis.ipynb)** 
-    - Analysis in progress, check back later.
+    - Please refer to the [notebook](https://github.com/henrycosentino/player_props/blob/main/nfl/analysis.ipynb) for in-depth analysis, covering: Anytime Touchdown, Two Plus Touchdown, Rushing Yard, Receiving Yard, Passing Yard, Passing Touchdown, and Receptions markets. 
 
 ### Data Sources
 
