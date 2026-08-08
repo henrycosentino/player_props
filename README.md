@@ -2,7 +2,7 @@
 
 One challenge in trading on prediction markets is the sheer number of live and historical markets. From the perspective of a trader or researcher seeking edge, choosing which market segment to focus on can be difficult.
 
-In this project, I examine bias in NBA, MLB, and NFL player proposition markets on Kalshi. I compare pre-game market pricing to realized hit rates using a paired-sample t-test to assess the accuracy of pre-game pricing. I also conduct a multivariable regression analysis to determine the effect that <span style="color:#5A99E0"><em>market maturity</em></span>, <span style="color:#FF6B6B"><em>market size</em></span>, <span style="color:#50E3C2"><em>contract size</em></span>, and <span style="color:#FDFD96"><em>side</em></span> have on realized profit and loss for makers and takers. Sports markets were chosen due to the strong underlying bias observed in retail traders, along with my personal interest in sports.
+In this project, I examine bias in NBA, MLB, and NFL player proposition markets on Kalshi. I compare pre-game market pricing to realized hit rates using a paired-sample t-test to assess the accuracy of pre-game pricing. I also conduct a multivariable regression analysis to determine the effect that _market maturity_, _market size_, _contract size_, and _side_ have on realized profit and loss for makers and takers. Sports markets were chosen due to the strong underlying bias observed in retail traders, along with my personal interest in sports.
 
 This work builds on [the findings of Constantin Bürgi, Wanying Deng, and Karl Whelan](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5502658).
 
@@ -10,7 +10,7 @@ Each proposition market segment is analyzed through:
 
 1. **Market Analysis**: Taker and maker PnL and returns are analyzed.
 2. **Hit Rates**: Hit rates are compared to pre-game market implied probability of outcome.
-3. **Regression Analysis**: Understanding how <span style="color:#5A99E0"><em>market maturity</em></span>, <span style="color:#FF6B6B"><em>market size</em></span>, <span style="color:#50E3C2"><em>contract size</em></span>, and <span style="color:#FDFD96"><em>side</em></span> affect realized profit and loss for makers and takers.
+3. **Regression Analysis**: Understanding how _market maturity_, _market size_, _contract size_, and _side_ affect realized profit and loss for makers and takers.
 
 ## Key Findings
 
