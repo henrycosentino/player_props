@@ -377,9 +377,11 @@ def _variable_color(
     analysis markdown legend, so the regression chart's bars visually
     match the written variable definitions.
     """
+    if ('price_delta_ticks' in var_name) or ('levels_touched' in var_name):
+        return "#F7A2C0"    # Order book sweeps
     if 'outcome_side' in var_name:
         return '#FDFD96'    # Price level and side
-    if any(key in var_name for key in ('market_completion_pct', 'is_post_kickoff_dummy')):
+    if ('market_completion_pct' in var_name) or ('is_post_kickoff_dummy' in var_name):
         return '#5A99E0'    # Market maturity
     if 'log_n_trades_in_market' in var_name:
         return '#FF6B6B'    # Market size
@@ -396,9 +398,9 @@ def graph_regression(
     ci: float = 0.95,
 ) -> None:
     """
-    Standardizes 'log_n_trades_in_market', 'log_count_fp', and 'market_completion_pct'
-    Then performs a multivariable regression with covariance clustered by ticker, and 
-    plots the coefficients with confidence interval error bars.
+    Standardizes 'log_price_delta_ticks', 'log_levels_touched', 'log_n_trades_in_market', 
+    'log_count_fp', and 'market_completion_pct'. Then performs a multivariable regression 
+    with covariance clustered by ticker, and plots the coefficients by series threshold.
  
     Args:
         df: DataFrame containing the data.
@@ -414,7 +416,7 @@ def graph_regression(
     if side not in ('maker', 'taker'):
         raise ValueError("side must be 'maker' or 'taker'")
  
-    variables_to_scale = ['log_n_trades_in_market', 'log_count_fp', 'market_completion_pct']
+    variables_to_scale = ['log_price_delta_ticks', 'log_levels_touched', 'log_n_trades_in_market', 'log_count_fp', 'market_completion_pct']
     scaled_variable_names = ["scaled_" + var for var in variables_to_scale]
  
     X_vars = scaled_variable_names + ['is_post_kickoff_dummy', f'{side}_outcome_side_dummy']
@@ -597,9 +599,9 @@ def graph_regression_by_threshold(
     ci: float = 0.95,
 ) -> None:
     """
-    Standardizes 'log_n_trades_in_market', 'log_count_fp', and 'market_completion_pct'.
-    Then performs a multivariable regression with covariance clustered by ticker, and 
-    plots the coefficients by series threshold.
+    Standardizes 'log_price_delta_ticks', 'log_levels_touched', 'log_n_trades_in_market', 
+    'log_count_fp', and 'market_completion_pct'. Then performs a multivariable regression 
+    with covariance clustered by ticker, and plots the coefficients by series threshold.
  
     Args:
         df: DataFrame containing the data.
@@ -612,7 +614,7 @@ def graph_regression_by_threshold(
     Returns:
         None. Displays forest plot using plotly figure.
     """
-    variables_to_scale = ['log_n_trades_in_market', 'log_count_fp', 'market_completion_pct']
+    variables_to_scale = ['log_price_delta_ticks', 'log_levels_touched', 'log_n_trades_in_market', 'log_count_fp', 'market_completion_pct']
     scaled_variable_names = ["scaled_" + var for var in variables_to_scale]
 
     X_vars = scaled_variable_names + ['is_post_kickoff_dummy', f'{side}_outcome_side_dummy']
