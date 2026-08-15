@@ -2,7 +2,7 @@
 
 One challenge in trading on prediction markets is the sheer number of live and historical markets. From the perspective of a trader or researcher seeking edge, choosing which market segment to focus on can be difficult.
 
-In this project, I examine bias in NBA, MLB, and NFL player proposition markets on Kalshi. I compare pre-game market pricing to realized hit rates using a paired-sample t-test to assess the accuracy of pre-game pricing. I also conduct a multivariable regression analysis to determine the effect that _side_, _market maturity_, _contract size_, _market size_,  and _order fill dispersion_ have on realized profit and loss for makers and takers. Sports markets were chosen due to the strong underlying bias observed in retail traders, along with my personal interest in sports.
+In this project, I examine bias in MLB, NBA, and NFL player proposition markets on Kalshi. I use a paired t-test to compare pre-game market pricing to realized hit rates and assess the accuracy of that pricing. I also conduct a multivariable regression analysis to determine the effect that _side_, _market maturity_, _contract size_, _market size_, and _order fill dispersion_ have on realized profit and loss for makers and takers. Sports markets were chosen due to the strong underlying bias observed in retail traders, along with my personal interest in sports.
 
 This work builds on [the findings of Constantin Bürgi, Wanying Deng, and Karl Whelan](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5502658).
 
@@ -10,20 +10,19 @@ Each proposition market segment is analyzed through:
 
 1. **Market Analysis**: Taker and maker PnL and returns are analyzed.
 2. **Hit Rates**: Hit rates are compared to pre-game market implied probability of outcome.
-3. **Regression Analysis**: Understanding how _side_, _market maturity_, _contract size_, _market size_,  and _order fill dispersion_ affect realized profit and loss for makers and takers.
+3. **Regression Analysis**: The effect of _side_, _market maturity_, _contract size_, _market size_, and _order fill dispersion_ on realized profit and loss are analyzed via regression.
 
 ## Key Findings
 
-- **[MLB Prop Markets](https://github.com/henrycosentino/player_props/blob/main/mlb/analysis.ipynb)** 
+- **MLB Prop Markets** 
     - Analysis in progress, check back later.
 - **[NBA Prop Markets](https://github.com/henrycosentino/player_props/blob/main/nba/analysis.ipynb)**
-    - Analysis in progress, check back later for more.
     - Total Maker PnL (after fees): $4,367,271.02.
     - Total Taker PnL (after fees): -$7,167,768.43.
     - Pre-game market implied probability of outcomes is structurally higher than observed hit rates.
-    - Makers earn less on the 'Yes' outcome side, makers tend to earn less post tip-off relative to pre-tip-off, a maker tends to earn more in the later stages of a market's lifecycle, and larger trades (by trade count) are associated with lower maker profit. Regarding order fill dispersion, makers tend to profit modestly more when fills cut deeper through the order book, and modestly less when fills are spread across a wider breadth of prices. Market size has no observable effect on maker PnL.
-    - Due to the strong relationship between maker and taker PnL, taker PnL dynamics nearly inversely mirror maker PnL dynamics. Takers earn less on the 'Yes' outcome side, takers tend to earn more post tip-off relative to pre-tip-off, a taker tends to earn less in the later stages of a market's lifecycle, and larger trades (by trade count) are associated with higher taker profit. Regarding order fill dispersion, takers tend to profit modestly less when fills cut deeper through the order book, and modestly more when fills are spread across a wider breadth of prices. Market size has no observable effect on taker PnL.
-    - Please refer to the [notebook](https://github.com/henrycosentino/player_props/blob/main/nfl/analysis.ipynb) for in-depth analysis, covering: Double Double, Triple Double, Threes, Steals, Blocks, Points, Assists, and Rebounds markets. 
+    - Makers earn less on the 'Yes' outcome side, makers tend to earn less post-tip-off relative to pre-tip-off, a maker tends to earn more in the later stages of a market's lifecycle, and larger trades (by trade count) are associated with lower maker profit. Regarding order fill dispersion, makers tend to profit modestly more when fills cut deeper through the order book, and modestly less when fills are spread across a wider breadth of prices. Market size has no observable effect on maker PnL.
+    - Due to the strong relationship between maker and taker PnL, taker PnL dynamics nearly inversely mirror maker PnL dynamics. Takers earn less on the 'Yes' outcome side, takers tend to earn more post-tip-off relative to pre-tip-off, a taker tends to earn less in the later stages of a market's lifecycle, and larger trades (by trade count) are associated with higher taker profit. Regarding order fill dispersion, takers tend to profit modestly less when fills cut deeper through the order book, and modestly more when fills are spread across a wider breadth of prices. Market size has no observable effect on taker PnL.
+    - Please refer to the [notebook](https://github.com/henrycosentino/player_props/blob/main/nba/analysis.ipynb) for in-depth analysis, covering: Double Double, Triple Double, Threes, Steals, Blocks, Points, Assists, and Rebounds markets. 
 - **[NFL Prop Markets](https://github.com/henrycosentino/player_props/blob/main/nfl/analysis.ipynb)** 
     - Total Maker PnL (after fees): $5,727,652.91.
     - Total Taker PnL (after fees): -$9,379,285.79.
