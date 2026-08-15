@@ -14,18 +14,29 @@ Each proposition market segment is analyzed through:
 
 ## Key Findings
 
-- **MLB Prop Markets** 
-    - Analysis in progress, check back later.
+- **[MLB Prop Markets](https://github.com/henrycosentino/player_props/blob/main/mlb/analysis.ipynb)** 
+    - Total Maker PnL (after fees): $1,173,819.24
+    - Total Taker PnL (after fees): -$4,503,020.47
+    - Total Maker Net Return: 0.64% (Notably more competitive/efficient than NBA and NFL markets)
+    - Total Taker Net Return: -4.74%
+    - Pre-game market implied probability of outcomes is modestly structurally higher than observed hit rates.
+    - Makers earn less on the 'Yes' outcome side, in larger markets makers tend to earn less, makers tend to earn less post-tip-off relative to pre-tip-off, a maker tends to earn more in the later stages of a market's lifecycle, and larger trades (by trade count) are associated with modestly higher maker profit. Order fill dispersion has a near-zero effect on maker PnL.
+    - Due to the strong relationship between maker and taker PnL, taker PnL dynamics nearly inversely mirror maker PnL dynamics. Takers earn less on the 'Yes' outcome side, in larger markets takers tend to earn more, takers tend to earn more post-tip-off relative to pre-tip-off, a taker tends to earn less in the later stages of a market's lifecycle, and larger trades (by trade count) are associated with modestly higher taker profit. Order fill dispersion has a near-zero effect on maker PnL.
+    - Please refer to the [notebook](https://github.com/henrycosentino/player_props/blob/main/mlb/analysis.ipynb) for in-depth analysis, covering: 1+ Stolen Bases, Home Runs, Strikeouts, Hits, combined Hits/Runs/RBIs, Total Bases, Outs, and RBIs markets. 
 - **[NBA Prop Markets](https://github.com/henrycosentino/player_props/blob/main/nba/analysis.ipynb)**
-    - Total Maker PnL (after fees): $4,367,271.02.
-    - Total Taker PnL (after fees): -$7,167,768.43.
+    - Total Maker PnL (after fees): $4,367,271.02
+    - Total Taker PnL (after fees): -$7,167,768.43
+    - Total Maker Net Return: 4.39%
+    - Total Taker Net Return: -8.01%
     - Pre-game market implied probability of outcomes is structurally higher than observed hit rates.
     - Makers earn less on the 'Yes' outcome side, makers tend to earn less post-tip-off relative to pre-tip-off, a maker tends to earn more in the later stages of a market's lifecycle, and larger trades (by trade count) are associated with lower maker profit. Regarding order fill dispersion, makers tend to profit modestly more when fills cut deeper through the order book, and modestly less when fills are spread across a wider breadth of prices. Market size has no observable effect on maker PnL.
     - Due to the strong relationship between maker and taker PnL, taker PnL dynamics nearly inversely mirror maker PnL dynamics. Takers earn less on the 'Yes' outcome side, takers tend to earn more post-tip-off relative to pre-tip-off, a taker tends to earn less in the later stages of a market's lifecycle, and larger trades (by trade count) are associated with higher taker profit. Regarding order fill dispersion, takers tend to profit modestly less when fills cut deeper through the order book, and modestly more when fills are spread across a wider breadth of prices. Market size has no observable effect on taker PnL.
     - Please refer to the [notebook](https://github.com/henrycosentino/player_props/blob/main/nba/analysis.ipynb) for in-depth analysis, covering: Double Double, Triple Double, Threes, Steals, Blocks, Points, Assists, and Rebounds markets. 
 - **[NFL Prop Markets](https://github.com/henrycosentino/player_props/blob/main/nfl/analysis.ipynb)** 
-    - Total Maker PnL (after fees): $5,727,652.91.
-    - Total Taker PnL (after fees): -$9,379,285.79.
+    - Total Maker PnL (after fees): $5,727,652.91
+    - Total Taker PnL (after fees): -$9,379,285.79
+    - Total Maker Net Return: 2.99%
+    - Total Taker Net Return: -9.20%
     - Pre-game market implied probability of outcomes is structurally higher than observed hit rates.
     - Makers earn less on the 'Yes' outcome side, makers tend to earn more in markets with more trades, and larger trades (by trade count) are associated with lower maker profit. Regarding order fill dispersion, makers tend to profit modestly more when fills cut deeper through the order book, and modestly less when fills are spread across a wider breadth of prices. Market maturity has no observable effect on maker PnL.
     - Due to the strong relationship between maker and taker PnL, taker PnL dynamics nearly inversely mirror maker PnL dynamics. Takers earn less on the 'Yes' outcome side, takers tend to earn less in markets with more trades, and larger trades (by trade count) are associated with higher taker profit. Regarding order fill dispersion, takers tend to profit modestly less when fills cut deeper through the order book, and modestly more when fills are spread across a wider breadth of prices. Market maturity has no observable effect on taker PnL.

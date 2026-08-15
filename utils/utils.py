@@ -825,7 +825,7 @@ def graph_regression_by_threshold(
         title={
             "text": (
                 f"<b>OLS Regression Summary Results by Series Threshold</b><br>"
-                f"<span style='font-size: 15px; color: #b0b0b0;'>{graph_title} Prop Market | Dependent Variable = <b>{y_var}</b> | Covariance Clustered by Market (ticker)</span>"
+                f"<span style='font-size: 15px; color: #b0b0b0;'>{graph_title} Prop Markets | Dependent Variable = <b>{y_var}</b> | Covariance Clustered by Market (ticker)</span>"
             ),
             "font": {"size": 20, "color": "#ffffff"},
             "x": 0.5,
