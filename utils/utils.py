@@ -5,7 +5,19 @@ import plotly.graph_objects as go
 
 
 # --- Preprocessing Helpers ---
-def find_teams(
+def find_nba_teams(
+    teams: str
+) -> tuple[str | None, str | None]:
+    """Data processing function used to extract NBA teams from Kalshi tickers."""
+
+    if len(teams) == 6:
+        away, home = teams[:3], teams[3:]
+    else:
+        away, home = None, None
+
+    return away, home
+
+def find_nfl_teams(
     teams: str
 ) -> tuple[str | None, str | None]:
     """Data processing function used to extract NFL teams from Kalshi tickers."""
@@ -142,7 +154,7 @@ def graph_comparison(
         print("No pre-game trade data available for this market.")
         return None
 
-# Per-market pregame probability and outcome
+    # Per-market pregame probability and outcome
     pregame_df = pregame_df.assign(
         _weighted_price=pregame_df['yes_price_dollars'] * pregame_df['count_fp']
     )
@@ -269,14 +281,14 @@ def graph_comparison_by_threshold(
 
     # Per-market pregame probability and outcome
     pregame_df = pregame_df.assign(
-        _weighted_price=pregame_df['yes_price_dollars'] * pregame_df['taker_dollar_amt']
+        _weighted_price=pregame_df['yes_price_dollars'] * pregame_df['count_fp']
     )
     market_stats = pregame_df.groupby(['series_threshold', 'ticker']).agg(
         _weighted_sum=('_weighted_price', 'sum'),
-        _dollar_sum=('taker_dollar_amt', 'sum'),
+        _contract_sum=('count_fp', 'sum'),
         _outcome=('result', 'first'),
     )
-    market_stats['pregame_prob_k'] = 100 * market_stats['_weighted_sum'] / market_stats['_dollar_sum']
+    market_stats['pregame_prob_k'] = 100 * market_stats['_weighted_sum'] / market_stats['_contract_sum']
     market_stats['outcome_k'] = 100 * market_stats['_outcome'].eq('yes')
     market_stats['diff_k'] = market_stats['pregame_prob_k'] - market_stats['outcome_k']
 

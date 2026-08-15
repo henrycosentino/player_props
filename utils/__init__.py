@@ -1,5 +1,6 @@
 from .utils import (
-    find_teams,
+    find_nba_teams,
+    find_nfl_teams,
     market_analysis,
     graph_comparison,
     graph_comparison_by_threshold,
@@ -8,7 +9,8 @@ from .utils import (
 )
 
 __all__ = [
-    "find_teams",
+    "find_nba_teams",
+    "find_nfl_teams",
     "market_analysis",
     "graph_comparison",
     "graph_comparison_by_threshold",
